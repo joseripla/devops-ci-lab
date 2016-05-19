@@ -1,0 +1,43 @@
+node {
+   def mvnHome = tool 'MVN_3_3_3'
+   
+   stage 'Checkout Code'
+   
+   git url: 'https://github.com/joseripla/devops-ci-lab.git'
+   
+     docker.image('swiftdocker/swift:latest').inside {
+    //trivial, yes - but it works
+    sh 'swift --version'
+  }
+   
+   stage 'Build'
+   dir('backend-rest/') {
+        sh "${mvnHome}/bin/mvn clean package" 
+        step([$class: 'ArtifactArchiver', artifacts: '**/target/*.jar', fingerprint: true])
+   }
+   
+   parallel (
+     
+     phase1: { 
+         
+         sh "echo p1; sleep 20s; echo phase1" },
+     
+     phase2: { 
+         
+         sh "echo p2; sleep 40s; echo phase2" }
+   )
+   echo "run this after both phases complete"   
+
+   stage 'Unit Testing'
+   
+   stage 'Integration Testing'
+   
+
+   stage 'Unit Testing'
+   dir('backend-rest/') {
+        sh "${mvnHome}/bin/mvn test" 
+      
+       //step([$class: 'JUnitResultArchiver', testResults: '**/target/surefire-reports/TEST-*.xml'])
+   }
+   
+}
