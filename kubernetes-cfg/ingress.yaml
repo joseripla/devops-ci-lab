@@ -1,0 +1,28 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ingress-labdevops
+spec:
+#  backend:
+#    serviceName: front-app-service
+#    servicePort: 80
+  rules:
+  - host:
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: front-app-service
+          servicePort: 8080
+      - path: /backend/*
+        backend:
+          serviceName: back-restapi-service
+          servicePort: 8080
+      - path: /mongodb/data
+        backend:
+          serviceName: back-restapi-service
+          servicePort: 8080
+      - path: /mongodb/*
+        backend:
+          serviceName: back-restapi-service
+          servicePort: 8080

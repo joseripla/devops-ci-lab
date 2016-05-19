@@ -1,0 +1,37 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: back-restapi-deployment
+  # these labels can be applied automatically
+  # from the labels in the pod template if not set
+  labels:
+    app:  restapi
+    role: master
+    tier: backend
+spec:
+  replicas: 3
+  # selector can be applied automatically
+  # from the labels in the pod template if not set
+  # selector:
+  #   app: guestbook
+  #   role: master
+  #   tier: backend
+  template:
+    metadata:
+      labels:
+        app: restapi-java
+        role: master
+        tier: backend
+    spec:
+      containers:
+      - name: restapi-java
+        image: gcr.io/sooulmatedev/lab-rest-service:v6
+        env:
+          - name : MONGODB_PORT_27017_TCP_ADDR
+            value : back-mongodb-service
+        resources:
+          requests:
+            #cpu: 100m
+            memory: 400Mi
+        ports:
+        - containerPort: 8080
