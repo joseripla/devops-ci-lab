@@ -1,0 +1,34 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: back-mongodb-deployment
+  # these labels can be applied automatically
+  # from the labels in the pod template if not set
+  labels:
+    app:  mongodb
+    role: master
+    tier: backend
+spec:
+  replicas: 1
+  # selector can be applied automatically
+  # from the labels in the pod template if not set
+  # selector:
+  #   app: guestbook
+  #   role: master
+  #   tier: backend
+  template:
+    metadata:
+      labels:
+        app: mongodb-node
+        role: master
+        tier: backend
+    spec:
+      containers:
+      - name: mongodb-master
+        image: mongo
+        resources:
+          requests:
+            cpu: 100m
+            memory: 500Mi
+        ports:
+        - containerPort: 27017

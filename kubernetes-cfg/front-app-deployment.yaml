@@ -1,0 +1,34 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: front-app-deployment
+  # these labels can be applied automatically
+  # from the labels in the pod template if not set
+  labels:
+    app:  front-app
+    role: master
+    tier: frontend
+spec:
+  replicas: 3
+  # selector can be applied automatically
+  # from the labels in the pod template if not set
+  # selector:
+  #   app: guestbook
+  #   role: master
+  #   tier: backend
+  template:
+    metadata:
+      labels:
+        app: front-app-node
+        role: master
+        tier: frontend
+    spec:
+      containers:
+      - name: node-app
+        image: gcr.io/sooulmatedev/lab-hello-node:v3
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
+        ports:
+        - containerPort: 8080
