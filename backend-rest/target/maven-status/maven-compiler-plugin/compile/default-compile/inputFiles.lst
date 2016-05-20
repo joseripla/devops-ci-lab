@@ -1,7 +1,7 @@
-/home/joser/workspace/devops/lab/backend-rest/complete/src/main/java/hello/GreetingController.java
-/home/joser/workspace/devops/lab/backend-rest/complete/src/main/java/hello/Greeting.java
-/home/joser/workspace/devops/lab/backend-rest/complete/src/main/java/com/devopslab/domain/PersonRepository.java
-/home/joser/workspace/devops/lab/backend-rest/complete/src/main/java/com/devopslab/controller/CacheRestController.java
-/home/joser/workspace/devops/lab/backend-rest/complete/src/main/java/com/devopslab/Application.java
-/home/joser/workspace/devops/lab/backend-rest/complete/src/main/java/com/devopslab/controller/MongodbRestController.java
-/home/joser/workspace/devops/lab/backend-rest/complete/src/main/java/com/devopslab/domain/Person.java
+/home/joser/workspace/devops/devops-ci-lab/backend-rest/src/main/java/com/devopslab/domain/Person.java
+/home/joser/workspace/devops/devops-ci-lab/backend-rest/src/main/java/com/devopslab/controller/CacheRestController.java
+/home/joser/workspace/devops/devops-ci-lab/backend-rest/src/main/java/hello/GreetingController.java
+/home/joser/workspace/devops/devops-ci-lab/backend-rest/src/main/java/com/devopslab/domain/PersonRepository.java
+/home/joser/workspace/devops/devops-ci-lab/backend-rest/src/main/java/com/devopslab/controller/MongodbRestController.java
+/home/joser/workspace/devops/devops-ci-lab/backend-rest/src/main/java/hello/Greeting.java
+/home/joser/workspace/devops/devops-ci-lab/backend-rest/src/main/java/com/devopslab/Application.java
