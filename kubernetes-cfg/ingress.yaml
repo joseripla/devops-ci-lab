@@ -8,7 +8,7 @@ spec:
 #    servicePort: 80
   rules:
   - host:
-    http:
+    http: 
       paths:
       - path: /
         backend:
