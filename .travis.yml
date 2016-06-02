@@ -1,11 +1,16 @@
+sudo: required
+
 language: java
 jdk:
 #  - oraclejdk7
   - oraclejdk8
-script: cd $BACKEND_JAVA_PROJECT && mvn test
+script: cd $BACKEND_JAVA_PROJECT && mvn package
 
 env:
   - BACKEND_JAVA_PROJECT=backend-rest
+
+services:
+  - docker
 
 matrix:
   include:
