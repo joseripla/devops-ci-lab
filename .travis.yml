@@ -1,14 +1,14 @@
 language: java
-jdk:
-  - oraclejdk7
-  - oraclejdk8
+#jdk:
+#  - oraclejdk7
+#  - oraclejdk8
 
 env:
   - BACKEND_JAVA_PROJECT=backend-rest
 
 matrix:
   include:
-  - jdk: oraclejdk7
-    script: cd $BACKEND_JAVA_PROJECT && mvn test
+#  - jdk: oraclejdk7
+#    script: cd $BACKEND_JAVA_PROJECT && mvn test
   - jdk: oraclejdk8
     script: cd $BACKEND_JAVA_PROJECT && mvn test
