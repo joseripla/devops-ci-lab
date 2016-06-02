@@ -9,7 +9,7 @@ metadata:
     role: master
     tier: frontend
 spec:
-  replicas: 2
+  replicas: 5
   # selector can be applied automatically
   # from the labels in the pod template if not set
   # selector:
