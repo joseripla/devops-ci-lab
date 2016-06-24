@@ -12,7 +12,11 @@
 hs_err_pid*
 
 target/
+<<<<<<< HEAD
 
 #IDE
 .idea/
 .iml
+=======
+.idea/
+>>>>>>> 384d4f3738ef1579fe2e9f07a7ee5946fa2e8863
